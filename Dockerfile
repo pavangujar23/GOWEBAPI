@@ -5,7 +5,7 @@ WORKDIR /build
 
 RUN export GO111MODULE=on
 
-RUN go get github.com/pavangujar23/GOWEBAPI
+RUN go get github.com/pavangujar23/GOWEBAPI/main
 
 #sShttps://github.com/pavangujar23/GOWEBAPI.gitSS
 RUN cd /build && git clone https://github.com/pavangujar23/GOWEBAPI.git
