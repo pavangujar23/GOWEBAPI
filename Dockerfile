@@ -20,7 +20,7 @@
 # ENTRYPOINT [ "/build/GOWEBAPI"]
 
 
-FROM golang:latest
+FROM golang:alphine AS builder
 WORKDIR /app
 COPY go.* ./
 RUN go mod download
@@ -29,6 +29,11 @@ RUN export GO111MODULE=on
 COPY . ./
  
 RUN go build -v -o server
+
+FROM alphine
+WORKDIR /app
+COPY --from=builder /app/ /app/ 
+
 EXPOSE 8080
  
 CMD ["/app/server"]
