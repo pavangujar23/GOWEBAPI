@@ -6,7 +6,7 @@ WORKDIR /build
 COPY go.* ./
 
 
-#RUN go mod download
+RUN go mod download
 
 RUN export GO111MODULE=on
 
