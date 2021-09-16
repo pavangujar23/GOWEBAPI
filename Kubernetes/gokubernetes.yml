@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gowebserver
+spec:
+  selector:
+    matchlabels:
+      app: gowebserver
+  replicas:2
+  template:
+    metadata:
+      labels:
+        app: gowebserver
+    spec: 
+      containers:
+      - name: gowebserver
+        image: pavangujar23/gowebserver:latest
+        ports:
+        - containerPort:8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gowebserver
+spec:
+  selector:
+    app: gowebserver
+  ports: 
+    - protocol: TCP
+      port: 8080
