@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: gowebserver
+        --validate: off
     spec: 
       containers:
       - name: gowebserver
