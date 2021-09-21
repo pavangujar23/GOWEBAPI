@@ -4,7 +4,7 @@ metadata:
   name: gowebserver
 spec:
   selector:
-    matchlabels:
+    matchLabels:
       app: gowebserver
   replicas: 2
   template:
